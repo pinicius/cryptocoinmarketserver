@@ -1,0 +1,30 @@
+{
+  "name": "Market",
+  "plural": "Market",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": ["prototype.__get__coinsData"]
+    }
+  },
+  "properties": {
+    "name": "string",
+    "lastUpdated": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "coinsData": {
+      "type": "hasMany",
+      "model": "CoinData",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

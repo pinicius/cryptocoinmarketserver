@@ -1,0 +1,24 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "CoinMarketCapService": {
+    "name": "CoinMarketCapService",
+    "connector": "rest",
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "https://api.coinmarketcap.com/v1/ticker",
+          "query": {
+            "convert": "{convert}"
+          }
+        },
+        "functions": {
+          "fetchData": ["convert"]
+        }
+      }
+    ]
+  }
+}

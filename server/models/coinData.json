@@ -1,0 +1,90 @@
+{
+  "name": "CoinData",
+  "plural": "CoinsData",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "properties": {
+    "cmcId": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "symbol": {
+      "type": "string",
+      "required": true
+    },
+    "rank": {
+      "type": "number",
+      "required": true
+    },
+    "priceUSD": {
+      "type": "number",
+      "required": true
+    },
+    "priceBTC": {
+      "type": "number",
+      "required": true
+    },
+    "priceEUR": {
+      "type": "number",
+      "required": true
+    },
+    "volumeUSD24h": {
+      "type": "number",
+      "required": true
+    },
+    "volumeEUR24h": {
+      "type": "number",
+      "required": true
+    },
+    "marketCapUSD": {
+      "type": "number",
+      "required": true
+    },
+    "marketCapEUR": {
+      "type": "number",
+      "required": true
+    },
+    "availableSupply": {
+      "type": "number",
+      "required": true
+    },
+    "totalSupply": {
+      "type": "number"
+    },
+    "percentChange1h": {
+      "type": "number"
+    },
+    "percentChange24h": {
+      "type": "number"
+    },
+    "percentChange7d": {
+      "type": "number"
+    },
+    "lastUpdated": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "market": {
+      "type": "belongsTo",
+      "model": "Market",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
